@@ -133,8 +133,8 @@ namespace GradeBook.GradeBooks
                     return 0.0;
             }
             var add = 0.0;
-            if(studentType==StudentType.Honors || studentType==StudentType.DualEnrolled) add = 1.0;
-            return gpa+add;
+            if ((studentType == StudentType.Honors || studentType == StudentType.DualEnrolled) && IsWeighted) add = 1.0;
+            return gpa + add;
         }
 
         public virtual void CalculateStatistics()
