@@ -18,7 +18,7 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException("Less than 5 students.");
             }
             // Get the position of the grade
-            var better = Students.FindAll(s => s.AverageGrade>averageGrade).Count;
+            var better = Students.FindAll(s => s.AverageGrade>=averageGrade).Count;
             var rank = (double)better/(double)Students.Count;
             // Act accordingly
             if(rank<=0.2) return 'A';
